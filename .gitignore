@@ -6,5 +6,4 @@ venv/
 .env
 .DS_Store
 Thumbs.db
-regression_plot.png
 *.pdf

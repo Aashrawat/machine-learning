@@ -10,4 +10,4 @@
 - **[LinearRegression/README.md](LinearRegression/README.md)** — equations, symbol table, and how gradient descent fits the line.
 - **[EDAProject1/README.md](EDAProject1/README.md)** — insurance charges: explore, clean, encode, engineer BMI/region features, then select with Pearson and chi-square.
 - **[LinearRegressionPrj/README.md](LinearRegressionPrj/README.md)** — Ford listings: attribute notes, EDA, one-hot vs `LabelEncoder`, scaling, and linear regression (one-hot ~0.85 R² vs label ~0.74).
-- **[LogisticRegression/Implementation.ipynb](LogisticRegression/Implementation.ipynb)** — Titanic: clean, encode, train logistic regression, predict `survived`.
+- **[LogisticRegression/Implementation.ipynb](LogisticRegression/Implementation.ipynb)** — Titanic: clean, encode, train logistic regression, then accuracy, confusion matrix, and classification report.

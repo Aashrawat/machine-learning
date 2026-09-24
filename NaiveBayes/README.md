@@ -139,9 +139,9 @@ $$
 
 | File | What it shows |
 | --- | --- |
-| `Implementation.ipynb` | Load Titanic, clean/encode features, train/test split, fit Gaussian Naive Bayes, then class means, accuracy, confusion matrix, and classification report. |
+| `ImplementationNaiveBayes.ipynb` | Load Titanic, clean/encode features, train/test split, fit Gaussian Naive Bayes, then accuracy, confusion matrix, and classification report. |
 
-Open the notebook on GitHub or in [Colab](https://colab.research.google.com/github/Aashrawat/machine-learning/blob/main/NaiveBayes/Implementation.ipynb).
+Open the notebook on GitHub or in [Colab](https://colab.research.google.com/github/Aashrawat/machine-learning/blob/main/NaiveBayes/ImplementationNaiveBayes.ipynb).
 
 ## Pipeline in the notebook
 

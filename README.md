@@ -9,6 +9,7 @@
 | [`KNN/`](KNN/) | Titanic survival with k-nearest neighbors |
 | [`NaiveBayes/`](NaiveBayes/) | Titanic survival with Gaussian Naive Bayes |
 | [`DecisionTree/`](DecisionTree/) | Titanic survival with a decision tree |
+| [`SVC/`](SVC/) | Titanic survival with an RBF support vector classifier |
 | [`face_rec/`](face_rec/) | OpenCV LBPH face recognition from a webcam or a still photo |
 
 - **[LinearRegression/README.md](LinearRegression/README.md)** — equations, symbol table, and how gradient descent fits the line.
@@ -18,4 +19,5 @@
 - **[KNN/README.md](KNN/README.md)** — Euclidean neighbors and $k$, then the same evaluation metrics.
 - **[NaiveBayes/README.md](NaiveBayes/README.md)** — prior, Gaussian likelihood, and the independence assumption, then accuracy, precision, recall, and $F_1$.
 - **[DecisionTree/README.md](DecisionTree/README.md)** — Gini splits and leaf majority votes, then accuracy, precision, recall, and $F_1$.
+- **[SVC/README.md](SVC/README.md)** — maximum-margin boundary and the RBF kernel, then accuracy, precision, recall, and $F_1$.
 - **[face_rec/README.md](face_rec/README.md)** — capture labeled photos, train an LBPH model, then recognize a face from the webcam or an image.

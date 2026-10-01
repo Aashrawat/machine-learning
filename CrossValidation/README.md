@@ -30,7 +30,7 @@ $$
 
 `cross_val_score(estimator, X, y, cv=5, scoring="accuracy")` runs that loop. Each fold trains a fresh copy of the estimator. Passing the already-fit `SVC` does not reuse the earlier 80/20 fit; scikit-learn clones the model and fits the clone on that fold’s training rows.
 
-This notebook sets `cv=5` and `scoring="accuracy"`, then prints the five fold accuracies and their mean.
+`CrossValidation_SVM.ipynb` sets `cv=5` and `scoring="accuracy"`, then prints the five fold accuracies and their mean.
 
 The notebook scales the full feature matrix before `cross_val_score`, so the scaler’s mean and variance include rows that a fold will later treat as test data.
 
@@ -45,7 +45,7 @@ The model is only the first argument. The same call works for the other models i
 | K-nearest neighbors | `KNeighborsClassifier()` | `"accuracy"` |
 | Naive Bayes | `GaussianNB()` | `"accuracy"` |
 | Decision tree | `DecisionTreeClassifier()` | `"accuracy"` |
-| SVC (this notebook) | `SVC(kernel="rbf")` | `"accuracy"` |
+| SVC (`CrossValidation_SVM.ipynb`) | `SVC(kernel="rbf")` | `"accuracy"` |
 
 ```python
 from sklearn.model_selection import cross_val_score
@@ -61,15 +61,45 @@ cross_val_score(GaussianNB(), X, y, cv=5, scoring="accuracy")
 
 For a classifier, `scoring` can also be `"precision"`, `"recall"`, or `"f1"`. Those are the same metrics as in the logistic regression, KNN, Naive Bayes, decision tree, and SVC notebooks. Only the way the score is averaged changes: one held-out split versus $k$ of them.
 
+## Grid search
+
+`cross_val_score` scores one model. **Grid search** scores many settings of that model and keeps the one with the best mean fold score.
+
+`GridSearchCV.ipynb` does this on the iris dataset. Each row is a flower. The features are sepal and petal length and width. The label `species` is one of setosa, versicolor, or virginica. The notebook first fits a single `SVC(C=10, kernel="linear")` on a $67/33$ split and scores the test set. It then asks `GridSearchCV` to try every pair of:
+
+| Parameter | Values tried |
+| --- | --- |
+| `C` | $1$, $10$, $20$, $30$ |
+| `kernel` | `rbf`, `linear` |
+
+That is $4 \times 2 = 8$ models. Each one is scored with 5-fold cross-validation, so the search fits $8 \times 5 = 40$ classifiers. `cv_results_` stores every fold score. The notebook turns that into a table and keeps `param_C`, `param_kernel`, and `mean_test_score`. The highest `mean_test_score` is the winner.
+
+The same wrapper works on every model in this repo. Pass a different estimator and the parameter names that estimator accepts:
+
+```python
+from sklearn.model_selection import GridSearchCV
+from sklearn.linear_model import LinearRegression, LogisticRegression
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.naive_bayes import GaussianNB
+
+GridSearchCV(LinearRegression(), {"fit_intercept": [True, False]}, cv=5)
+GridSearchCV(LogisticRegression(), {"C": [0.1, 1, 10]}, cv=5)
+GridSearchCV(KNeighborsClassifier(), {"n_neighbors": [3, 5, 7]}, cv=5)
+GridSearchCV(GaussianNB(), {"var_smoothing": [1e-9, 1e-8, 1e-7]}, cv=5)
+```
+
+`GridSearchCV` still uses k-fold cross-validation inside. Only the estimator and the grid change.
+
 ## Files
 
 | File | What it shows |
 | --- | --- |
 | `CrossValidation_SVM.ipynb` | Load Titanic, clean and encode features, fit an RBF `SVC` on an 80/20 split, then 5-fold `cross_val_score` accuracy on the scaled features. |
+| `GridSearchCV.ipynb` | Load iris, fit one linear `SVC`, then `GridSearchCV` over `C` and `kernel` with 5-fold scores. |
 
-Open the notebook on GitHub or in [Colab](https://colab.research.google.com/github/Aashrawat/machine-learning/blob/main/CrossValidation/CrossValidation_SVM.ipynb).
+Open either notebook on GitHub or in Colab: [cross-validation](https://colab.research.google.com/github/Aashrawat/machine-learning/blob/main/CrossValidation/CrossValidation_SVM.ipynb), [grid search](https://colab.research.google.com/github/Aashrawat/machine-learning/blob/main/CrossValidation/GridSearchCV.ipynb).
 
-## Pipeline in the notebook
+## Pipeline in `CrossValidation_SVM.ipynb`
 
 1. Load `sns.load_dataset("titanic")`.
 2. Drop unused columns (`deck`, `embark_town`, `alive`, `class`, `who`, `adult_male`).
@@ -80,3 +110,13 @@ Open the notebook on GitHub or in [Colab](https://colab.research.google.com/gith
 7. `StandardScaler` on the split, then `SVC(kernel="rbf")` and `predict` on the test set.
 8. Scale the full feature matrix `X`.
 9. `cross_val_score(..., cv=5, scoring="accuracy")`, then print the five scores and their mean.
+
+## Pipeline in `GridSearchCV.ipynb`
+
+1. Load `sns.load_dataset("iris")`.
+2. Target `y` = `species`; `X` = sepal and petal measurements.
+3. $67/33$ train/test split (`random_state=42`).
+4. Fit `SVC(C=10, kernel="linear", gamma="auto")` and score the test set.
+5. `GridSearchCV` on that SVC with `C` in $\{1, 10, 20, 30\}$, `kernel` in `{rbf, linear}`, and `cv=5`.
+6. `fit` on the full `X` and `y`.
+7. Build a table from `cv_results_` and show `param_C`, `param_kernel`, and `mean_test_score`.

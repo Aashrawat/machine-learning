@@ -10,7 +10,7 @@
 | [`NaiveBayes/`](NaiveBayes/) | Titanic survival with Gaussian Naive Bayes |
 | [`DecisionTree/`](DecisionTree/) | Titanic survival with a decision tree |
 | [`SVC/`](SVC/) | Titanic survival with an RBF support vector classifier |
-| [`CrossValidation/`](CrossValidation/) | 5-fold cross-validation on an RBF support vector classifier |
+| [`CrossValidation/`](CrossValidation/) | 5-fold cross-validation, then `GridSearchCV` over an SVC |
 | [`face_rec/`](face_rec/) | OpenCV LBPH face recognition from a webcam or a still photo |
 
 - **[LinearRegression/README.md](LinearRegression/README.md)** — equations, symbol table, and how gradient descent fits the line.
@@ -21,5 +21,5 @@
 - **[NaiveBayes/README.md](NaiveBayes/README.md)** — prior, Gaussian likelihood, and the independence assumption, then accuracy, precision, recall, and $F_1$.
 - **[DecisionTree/README.md](DecisionTree/README.md)** — Gini splits and leaf majority votes, then accuracy, precision, recall, and $F_1$.
 - **[SVC/README.md](SVC/README.md)** — maximum-margin boundary and the RBF kernel, then accuracy, precision, recall, and $F_1$.
-- **[CrossValidation/README.md](CrossValidation/README.md)** — 5-fold scores and their mean. The same `cross_val_score` call works for linear regression, logistic regression, KNN, and Naive Bayes.
+- **[CrossValidation/README.md](CrossValidation/README.md)** — 5-fold scores and their mean, then `GridSearchCV` over `C` and kernel. The same search works for linear regression, logistic regression, KNN, and Naive Bayes.
 - **[face_rec/README.md](face_rec/README.md)** — capture labeled photos, train an LBPH model, then recognize a face from the webcam or an image.

@@ -97,7 +97,7 @@ GridSearchCV(GaussianNB(), {"var_smoothing": [1e-9, 1e-8, 1e-7]}, cv=5)
 | `CrossValidation_SVM.ipynb` | Load Titanic, clean and encode features, fit an RBF `SVC` on an 80/20 split, then 5-fold `cross_val_score` accuracy on the scaled features. |
 | `GridSearchCV.ipynb` | Load iris, fit one linear `SVC`, then `GridSearchCV` over `C` and `kernel` with 5-fold scores. |
 
-Open either notebook on GitHub or in Colab: [cross-validation](https://colab.research.google.com/github/Aashrawat/machine-learning/blob/main/CrossValidation/CrossValidation_SVM.ipynb), [grid search](https://colab.research.google.com/github/Aashrawat/machine-learning/blob/main/CrossValidation/GridSearchCV.ipynb).
+Open either notebook on GitHub or in Colab: [cross-validation](https://colab.research.google.com/github/Aashrawat/machine-learning/blob/main/SupervisedLearning/CrossValidation/CrossValidation_SVM.ipynb), [grid search](https://colab.research.google.com/github/Aashrawat/machine-learning/blob/main/SupervisedLearning/CrossValidation/GridSearchCV.ipynb).
 
 ## Pipeline in `CrossValidation_SVM.ipynb`
 

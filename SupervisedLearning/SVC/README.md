@@ -120,7 +120,7 @@ $$
 | --- | --- |
 | `ImplementationSVC.ipynb` | Load Titanic, clean/encode features, scale, train/test split, fit an RBF support vector classifier, then accuracy, confusion matrix, and classification report. |
 
-Open the notebook on GitHub or in [Colab](https://colab.research.google.com/github/Aashrawat/machine-learning/blob/main/SVC/ImplementationSVC.ipynb).
+Open the notebook on GitHub or in [Colab](https://colab.research.google.com/github/Aashrawat/machine-learning/blob/main/SupervisedLearning/SVC/ImplementationSVC.ipynb).
 
 ## Pipeline in the notebook
 

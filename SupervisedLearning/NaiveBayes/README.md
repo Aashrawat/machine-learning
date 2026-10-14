@@ -141,7 +141,7 @@ $$
 | --- | --- |
 | `ImplementationNaiveBayes.ipynb` | Load Titanic, clean/encode features, train/test split, fit Gaussian Naive Bayes, then accuracy, confusion matrix, and classification report. |
 
-Open the notebook on GitHub or in [Colab](https://colab.research.google.com/github/Aashrawat/machine-learning/blob/main/NaiveBayes/ImplementationNaiveBayes.ipynb).
+Open the notebook on GitHub or in [Colab](https://colab.research.google.com/github/Aashrawat/machine-learning/blob/main/SupervisedLearning/NaiveBayes/ImplementationNaiveBayes.ipynb).
 
 ## Pipeline in the notebook
 

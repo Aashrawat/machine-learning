@@ -7,7 +7,7 @@ Uses OpenCV **LBPH** (works on Python 3.14; no TensorFlow required).
 ## Setup
 
 ```powershell
-cd face_rec
+cd SupervisedLearning/face_rec
 python -m pip install -r requirements.txt
 ```
 

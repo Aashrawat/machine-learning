@@ -121,7 +121,7 @@ $$
 | --- | --- |
 | `ImplementationDecisionTree.ipynb` | Load Titanic, clean/encode features, scale, train/test split, fit a decision tree, then accuracy, confusion matrix, and classification report. |
 
-Open the notebook on GitHub or in [Colab](https://colab.research.google.com/github/Aashrawat/machine-learning/blob/main/DecisionTree/ImplementationDecisionTree.ipynb).
+Open the notebook on GitHub or in [Colab](https://colab.research.google.com/github/Aashrawat/machine-learning/blob/main/SupervisedLearning/DecisionTree/ImplementationDecisionTree.ipynb).
 
 ## Pipeline in the notebook
 

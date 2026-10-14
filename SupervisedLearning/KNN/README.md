@@ -113,7 +113,7 @@ $$
 | --- | --- |
 | `KNNimplementation.ipynb` | Load Titanic, clean/encode features, scale, train/test split, fit KNN ($k=5$), then accuracy, confusion matrix, and classification report. |
 
-Open the notebook on GitHub or in [Colab](https://colab.research.google.com/github/Aashrawat/machine-learning/blob/main/KNN/KNNimplementation.ipynb).
+Open the notebook on GitHub or in [Colab](https://colab.research.google.com/github/Aashrawat/machine-learning/blob/main/SupervisedLearning/KNN/KNNimplementation.ipynb).
 
 ## Pipeline in the notebook
 

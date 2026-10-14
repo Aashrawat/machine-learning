@@ -16,7 +16,6 @@ Labeled examples and a target to predict live in [`SupervisedLearning/`](Supervi
 | [`SupervisedLearning/EnsembleLearning/`](SupervisedLearning/EnsembleLearning/) | Ensemble learning |
 | [`SupervisedLearning/SVC/`](SupervisedLearning/SVC/) | Titanic survival with an RBF support vector classifier |
 | [`SupervisedLearning/CrossValidation/`](SupervisedLearning/CrossValidation/) | 5-fold cross-validation, then `GridSearchCV` over an SVC |
-| [`SupervisedLearning/face_rec/`](SupervisedLearning/face_rec/) | OpenCV LBPH face recognition from a webcam or a still photo |
 
 - **[LinearRegression/README.md](SupervisedLearning/LinearRegression/README.md)** — equations, symbol table, and how gradient descent fits the line.
 - **[LinearRegressionPrj/README.md](SupervisedLearning/LinearRegressionPrj/README.md)** — Ford listings: attribute notes, EDA, one-hot vs `LabelEncoder`, scaling, and linear regression (one-hot ~0.85 R² vs label ~0.74).
@@ -26,7 +25,6 @@ Labeled examples and a target to predict live in [`SupervisedLearning/`](Supervi
 - **[DecisionTree/README.md](SupervisedLearning/DecisionTree/README.md)** — Gini splits and leaf majority votes, then accuracy, precision, recall, and $F_1$.
 - **[SVC/README.md](SupervisedLearning/SVC/README.md)** — maximum-margin boundary and the RBF kernel, then accuracy, precision, recall, and $F_1$.
 - **[CrossValidation/README.md](SupervisedLearning/CrossValidation/README.md)** — 5-fold scores and their mean, then `GridSearchCV` over `C` and kernel. The same search works for linear regression, logistic regression, KNN, and Naive Bayes.
-- **[face_rec/README.md](SupervisedLearning/face_rec/README.md)** — capture labeled photos, train an LBPH model, then recognize a face from the webcam or an image.
 
 ### Other
 

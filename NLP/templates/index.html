@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sentence emotion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,520;9..144,640&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="mast">
+    <p class="eyebrow">Natural language processing</p>
+    <h1>What emotion is in this sentence?</h1>
+    <p class="lede">The page cleans the words the same way as the notebook, then asks three models to pick an emotion: sadness, anger, love, surprise, fear, or joy.</p>
+  </header>
+
+  <main>
+    <section class="layout">
+      <form id="composer" class="composer">
+        <label for="sentence">Sentence</label>
+        <textarea id="sentence" name="sentence" rows="5" maxlength="2000" placeholder="i feel hopeful when someone who cares is awake" required></textarea>
+        <div class="examples" id="examples">
+          <button type="button" data-text="i didnt feel humiliated">humiliated</button>
+          <button type="button" data-text="i am feeling grouchy">grouchy</button>
+          <button type="button" data-text="i feel romantic too">romantic</button>
+          <button type="button" data-text="i remember feeling acutely distressed for a few days">distressed</button>
+          <button type="button" data-text="i have the feeling she was amused and delighted">delighted</button>
+          <button type="button" data-text="i can go from feeling so hopeless to so damned hopeful just from being around someone who cares and is awake">notebook example</button>
+        </div>
+        <div class="actions">
+          <button class="primary" type="submit">Classify</button>
+          <p class="hint">Ctrl+Enter classifies from the box.</p>
+        </div>
+        <p id="form-error" class="form-error" role="alert" hidden></p>
+      </form>
+
+      <aside class="snapshot" id="snapshot" aria-live="polite">
+        <p class="muted">Loading the training snapshot…</p>
+      </aside>
+    </section>
+
+    <section id="results" aria-live="polite">
+      <div class="teaser">
+        <article>
+          <h2>Word counts + Naive Bayes</h2>
+          <p>Each word becomes a count. Naive Bayes picks the emotion those counts fit best.</p>
+        </article>
+        <article>
+          <h2>TF-IDF + Naive Bayes</h2>
+          <p>The same Naive Bayes model, with words that show up in many sentences weighed down.</p>
+        </article>
+        <article>
+          <h2>TF-IDF + logistic regression</h2>
+          <p>A learned weight for every word. The emotion with the largest score wins. This one is the most accurate on the held-out sentences.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Models are fit on an 80/20 split of <code>train.txt</code> (<code>random_state=42</code>). A sentence you type is scored with those fitted models.</p>
+  </footer>
+  <noscript><p class="noscript">This page needs JavaScript to classify a sentence.</p></noscript>
+  <script src="/static/app.js"></script>
+</body>
+</html>

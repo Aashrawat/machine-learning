@@ -139,12 +139,23 @@ The notebook prints accuracy on the 3,200 held-out sentences:
 
 Bag-of-words counts match the multinomial likelihood, so Naive Bayes scores higher on counts (0.768) than on TF-IDF (0.661). Logistic regression treats TF-IDF as features and reaches 0.863, the highest of the three.
 
+## Try a sentence
+
+`app.py` serves a local page that cleans text the same way as the notebook and scores it with all three models.
+
+```bash
+py -3 app.py
+```
+
+Open http://127.0.0.1:8765. The first launch fits the models and caches them in `NLP/.cache/`. Later launches load that cache.
+
 ## Files
 
 | File | What it shows |
 | --- | --- |
 | `NLP_ML.ipynb` | Load `train.txt`, clean text, encode emotions, split 80/20, then bag-of-words Naive Bayes, TF-IDF Naive Bayes, and TF-IDF logistic regression. |
 | `train.txt` | 16,000 sentences labeled sadness, anger, love, surprise, fear, or joy. |
+| `app.py` | Local page: type a sentence, see the cleaning steps, and compare the three models. |
 
 Open the notebook on GitHub or in [Colab](https://colab.research.google.com/github/Aashrawat/machine-learning/blob/main/NLP/NLP_ML.ipynb).
 

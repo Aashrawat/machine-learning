@@ -13,7 +13,6 @@ Labeled examples and a target to predict live in [`SupervisedLearning/`](Supervi
 | [`SupervisedLearning/NaiveBayes/`](SupervisedLearning/NaiveBayes/) | Titanic survival with Gaussian Naive Bayes |
 | [`SupervisedLearning/DecisionTree/`](SupervisedLearning/DecisionTree/) | Titanic survival with a decision tree |
 | [`SupervisedLearning/RandomForest/`](SupervisedLearning/RandomForest/) | Random forest |
-| [`SupervisedLearning/EnsembleLearning/`](SupervisedLearning/EnsembleLearning/) | Ensemble learning |
 | [`SupervisedLearning/SVC/`](SupervisedLearning/SVC/) | Titanic survival with an RBF support vector classifier |
 | [`SupervisedLearning/CrossValidation/`](SupervisedLearning/CrossValidation/) | 5-fold cross-validation, then `GridSearchCV` over an SVC |
 

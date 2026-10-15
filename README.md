@@ -35,3 +35,4 @@ Labeled examples and a target to predict live in [`SupervisedLearning/`](Supervi
 | [`NLP/`](NLP/) | Natural language processing |
 
 - **[EDAProject1/README.md](EDAProject1/README.md)** — insurance charges: explore, clean, encode, engineer BMI/region features, then select with Pearson and chi-square.
+- **[NLP/README.md](NLP/README.md)** — emotion labels on short sentences: clean the text, compare bag-of-words and TF-IDF, then Multinomial Naive Bayes and logistic regression (TF-IDF logistic regression ~0.86 accuracy).
